@@ -6,4 +6,4 @@ def multiple_returns(sentence):
         fc = sentence[0]
 
     length = len(sentence)
-    return(length, fc)
+    return (length, fc)
