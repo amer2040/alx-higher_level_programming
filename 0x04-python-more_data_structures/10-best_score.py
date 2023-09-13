@@ -8,6 +8,5 @@ def best_score(a_dictionary):
         for k, v in a_dictionary.items():
             if v > big:
                 big = v
-                key = k
-        return key
-                
+                ikey = k
+    return key            
