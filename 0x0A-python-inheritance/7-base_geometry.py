@@ -2,7 +2,7 @@
 '''module for BasGeometry class'''
 
 
-class BasGeometry:
+class BaseGeometry:
     '''A BaseGeometry class.'''
     def area(self):
         '''Method to compute this area.'''
