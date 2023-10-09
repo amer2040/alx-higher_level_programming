@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-'''module for addnewattr method'''
+'''module for add_attribute method'''
 
 
-def addnewattr(obj, attr, value):
+def add_attribute(obj, attr, value):
     '''Add new attribute to an object if found.
     Args:
         obj: the object to add an attribute.
