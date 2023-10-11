@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 '''modules'''
-
-
 from sys import stdin
 
 
@@ -21,7 +19,7 @@ total_size = x = 0
 
 def print_statistics():
     '''prints the statistics'''
-    print('File sizr: {}'.format(total_size))
+    print('File sizr: {:d}'.format(total_size))
     for key, value in sorted(status_codes.items()):
         if value > 0:
             print('{:s}: {:d}'.format(key, value))
