@@ -19,10 +19,11 @@ total_size = x = 0
 
 def print_statistics():
     '''prints the statistics'''
-    print('File size: {:d}'.format(total_size))
+    print(f'File size: {total_size}')
     for key, value in sorted(status_codes.items()):
         if value > 0:
             print('{:s}: {:d}'.format(key, value))
+
 
 try:
     for line in stdin:
