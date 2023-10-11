@@ -17,7 +17,7 @@ class Student:
         Otherwise, all attributes must be retrieved'''
         try:
             for atr in attrs:
-                if type(attr) is not str:
+                if type(atr) is not str:
                     return self.__dict__
         except Exception:
             return self.__dict__
