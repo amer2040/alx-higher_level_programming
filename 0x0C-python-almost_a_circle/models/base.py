@@ -38,7 +38,8 @@ class Base:
         '''saves jason object to files'''
         if list_objs is not None:
             list_objs = [x.to_dictionary() for x in list_objs]
-        with open('{}.json'.format(cls.__name__), 'w', encoding='utf-8') as file:
+        with open('{}.json'.format(cls.__name__), 'w',
+                  encoding='utf-8') as file:
             file.write(cls.to_json_string(list_objs))
 
     @classmethod
