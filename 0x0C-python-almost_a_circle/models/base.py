@@ -72,15 +72,15 @@ class Base:
 		from models.square import Square
 		if list_objs is not None:
 			if cls is Rectangle:
-				list_objs = [[x.id, x.width, x.height, x.x, x.y] 
-							 for x in list_objs]
+				list_objs = [[x.id, x.width, x.height, x.x, x.y]
+							for x in list_objs]
 			else:
-				list_objs = [[x.id, x.size, x.x, x.y] 
-							 for x in list_objs]
+				list_objs = [[x.id, x.size, x.x, x.y]
+							for x in list_objs]
 		with open(f'{cls.__name__}.csv', 'w', newline='', encoding='utf-8') as file:
 			writer = csv.writer(file)
 			writer.writerows(list_objs)
-	
+
 	@classmethod
 	def load_from_file_csv(cls):
 		'''loads object from csv file'''
@@ -92,7 +92,8 @@ class Base:
 			for row in reader:
 				row = [int(r) for r in row]
 				if cls is Rectangle:
-					x = {'id': row[0], 'width': row[1], 'height': row[2], 'x': row[3], 'y': row[4]}
+					x = {'id': row[0], 'width': row[1], 'height': row[2], \
+						'x': row[3], 'y': row[4]}
 				else:
 					x = {'id': row[0], 'size': row[1], 'x': row[2], 'y': row[3]}
 				i.append(cls.create(**x))
