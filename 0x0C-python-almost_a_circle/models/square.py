@@ -11,8 +11,9 @@ class Square(Rectangle):
 
     def __str__(self):
         '''returns info about the square'''
-        return f'[{type(self).__name__}] \
-            ({self.id}) {self.x}/{self.y} - {self.width}'
+        return '[{}] ({}) {}/{} - {}'.format(type(self).__name__,
+                                             self.id, self.x, self.y,
+                                             self.width)
 
     @property
     def size(self):
@@ -29,16 +30,16 @@ class Square(Rectangle):
         '''update instance attributes by */**args'''
         if id is not None:
             self.id = id
-        elif x is not None:
+        if x is not None:
             self.x = x
-        elif y is not None:
+        if y is not None:
             self.y = y
 
     def update(self, *args, **kwargs):
         '''update instance attributes by keyword args and no-keyword'''
         if args:
             self.__update(*args)
-        elif kwargs:
+        if kwargs:
             self.__update(**kwargs)
 
     def to_dictionary(self):
