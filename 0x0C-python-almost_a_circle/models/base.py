@@ -30,8 +30,7 @@ class Base:
         '''convert json string to list of dictionaries'''
         if json_string is None or not json_string:
             return []
-        else:
-            return loads(json_string)
+        return loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
