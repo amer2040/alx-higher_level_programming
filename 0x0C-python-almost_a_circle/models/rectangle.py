@@ -87,13 +87,13 @@ class Rectangle(Base):
         '''private method to updates instance attributes by */**args'''
         if id is not None:
             self.id = id
-        elif width is not None:
+        if width is not None:
             self.width = width
-        elif height is not None:
+        if height is not None:
             self.height = height
-        elif x is not None:
+        if x is not None:
             self.x = x
-        elif y is not None:
+        if y is not None:
             self.y = y
 
     def update(self, *args, **kwargs):
