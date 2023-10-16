@@ -34,7 +34,7 @@ class Base:
             return loads(json_string)
 
     @classmethod
-    def save_to_files(cls, list_objs):
+    def save_to_file(cls, list_objs):
         '''saves jason object to files'''
         if list_objs is not None:
             list_objs = [x.to_dictionary() for x in list_objs]
@@ -43,7 +43,7 @@ class Base:
             file.write(cls.to_json_string(list_objs))
 
     @classmethod
-    def load_from_files(cls):
+    def load_from_file(cls):
         '''loads json object from files'''
         from os import path
         f = '{}.json'.format(cls.__name__)
