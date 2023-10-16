@@ -38,14 +38,14 @@ class Base:
         '''saves jason object to files'''
         if list_objs is not None:
             list_objs = [x.to_dictionary() for x in list_objs]
-        with open(f'{cls.__name__}.json', 'w', encoding='utf-8') as file:
+        with open('{}.json'.format(cls.__name__), 'w', encoding='utf-8') as file:
             file.write(cls.to_json_string(list_objs))
 
     @classmethod
     def load_from_files(cls):
         '''loads json object from files'''
         from os import path
-        f = f'{cls.__name__}.json'
+        f = '{}.json'.format(cls.__name__)
         if path.isfile(f):
             return []
         with open(f, 'r', encoding='utf-8') as file:
@@ -77,7 +77,7 @@ class Base:
             else:
                 list_objs = [[x.id, x.size, x.x, x.y]
                              for x in list_objs]
-        with open(f'{cls.__name__}.csv', 'w', newline='',
+        with open('{}.csv'.format(cls.__name__), 'w', newline='',
                   encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerows(list_objs)
@@ -88,7 +88,7 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
         i = []
-        with open(f'{cls.__name__}.csv', 'r', newline='',
+        with open('{}.csv'.format(cls.__name__), 'r', newline='',
                   encoding='utf-8') as file:
             reader = csv.reader(file)
             for row in reader:
