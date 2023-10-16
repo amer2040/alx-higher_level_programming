@@ -89,7 +89,7 @@ class Base:
         from models.square import Square
         i = []
         with open(f'{cls.__name__}.csv', 'r', newline='',
-                   encoding='utf-8') as file:
+                  encoding='utf-8') as file:
             reader = csv.reader(file)
             for row in reader:
                 row = [int(r) for r in row]
