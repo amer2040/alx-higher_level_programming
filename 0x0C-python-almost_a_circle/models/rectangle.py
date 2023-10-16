@@ -74,7 +74,7 @@ class Rectangle(Base):
     def display(self):
         '''print representation of the rectangle in string'''
         string = '\n' * self.y + \
-                (' ' * self.x + '#' * self.width + '\n') * self.height
+            (' ' * self.x + '#' * self.width + '\n') * self.height
         print(string, end='')
 
     def __str__(self):
@@ -104,10 +104,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         '''return dictionary representation of the rectangle'''
-        return {
-        'id': self.id,
-        'width': self.__width,
-        'height': self.__height,
-        'x': self.__x,
-        'y': self.__y
-        }
+        return {'id': self.id, 'width': self.__width, \
+                'height': self.__height, 'x': self.__x, 'y': self.__y}
