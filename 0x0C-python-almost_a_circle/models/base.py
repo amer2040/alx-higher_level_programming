@@ -43,16 +43,6 @@ class Base:
             file.write(cls.to_json_string(list_objs))
 
     @classmethod
-    def load_from_file(cls):
-        '''loads json object from files'''
-        from os import path
-        f = '{}.json'.format(cls.__name__)
-        if path.isfile(f):
-            return []
-        with open(f, 'r', encoding='utf-8') as file:
-            return [cls.create(**x) for x in cls.from_json_string(file.read())]
-
-    @classmethod
     def create(cls, **dictionary):
         '''loads instance from dictionary'''
         from models.rectangle import Rectangle
@@ -65,6 +55,16 @@ class Base:
             new = None
         new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        '''loads json object from files'''
+        from os import path
+        f = '{}.json'.format(cls.__name__)
+        if path.isfile(f):
+            return []
+        with open(f, 'r', encoding='utf-8') as file:
+            return [cls.create(**x) for x in cls.from_json_string(file.read())]
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
