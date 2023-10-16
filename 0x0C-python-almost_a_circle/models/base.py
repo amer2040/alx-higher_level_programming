@@ -60,7 +60,7 @@ class Base:
         '''loads json object from files'''
         from os import path
         f = '{}.json'.format(cls.__name__)
-        if path.isfile(f):
+        if not path.isfile(f):
             return []
         with open(f, 'r', encoding='utf-8') as file:
             return [cls.create(**x) for x in cls.from_json_string(file.read())]
